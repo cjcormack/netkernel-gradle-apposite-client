@@ -1,0 +1,23 @@
+apply plugin: 'groovy'
+
+repositories {
+  mavenCentral()
+  
+}
+
+uploadArchives {
+  repositories {
+    ivy {
+      url "repo"
+    }
+  }
+}
+
+dependencies {
+  compile gradleApi()
+  groovy localGroovy()
+  
+  runtime 'com.h2database:h2:1.2.133'
+  compile 'xom:xom:1.2.5'
+  compile 'commons-io:commons-io:2.3'
+}
